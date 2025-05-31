@@ -84,6 +84,18 @@ Content-Type: application/json
     "createdAt": "2024-03-20T12:00:00Z"
   }
 }
+
+# Obtener información del usuario actual
+GET /auth/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+# Respuesta
+{
+  "id": "user-id",
+  "name": "Nombre Usuario",
+  "email": "email@example.com",
+  "createdAt": "2024-03-20T12:00:00Z"
+}
 ```
 
 ### GraphQL
