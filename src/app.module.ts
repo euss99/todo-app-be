@@ -9,6 +9,7 @@ import { PassportModule } from "@nestjs/passport";
 import { TypeOrmModule } from "@nestjs/typeorm";
 
 import { databaseConfig } from "@/config/database.config";
+import { GetUserByTokenUseCase } from "@/context/application/use-cases/auth/get-user-by-token.use-case";
 import { LoginUseCase } from "@/context/application/use-cases/auth/login.use-case";
 import { CreateTodoUseCase } from "@/context/application/use-cases/todo/create-todo.use-case";
 import { DeleteTodoUseCase } from "@/context/application/use-cases/todo/delete-todo.use-case";
@@ -75,6 +76,7 @@ import { AuthController } from "@/context/infrastructure/rest/controllers/auth.c
     UpdateTodoUseCase,
     UpdateTodoStatusUseCase,
     LoginUseCase,
+    GetUserByTokenUseCase,
     UserResolver,
     TodoResolver,
     JwtStrategy,
