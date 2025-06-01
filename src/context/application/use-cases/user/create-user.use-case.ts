@@ -2,6 +2,7 @@ import { Inject, Injectable } from "@nestjs/common";
 import * as bcrypt from "bcrypt";
 
 import { User } from "@/context/domain/entities/user.entity";
+import { EmailAlreadyExistsException } from "@/context/domain/exceptions/email-already-exists.exception";
 import { UserRepository } from "@/context/domain/interfaces/user.repository.interface";
 import { USER_REPOSITORY } from "@/context/domain/tokens/injection.tokens";
 
@@ -13,6 +14,11 @@ export class CreateUserUseCase {
   ) {}
 
   async execute(name: string, email: string, password: string): Promise<User> {
+    const existingUser = await this.userRepository.findByEmail(email);
+    if (existingUser) {
+      throw new EmailAlreadyExistsException(email);
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User(
       crypto.randomUUID(),

@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { Inject } from "@nestjs/common";
 
+import { TodoNotFoundException } from "@/context/domain/exceptions/todo-not-found.exception";
 import { TodoRepository } from "@/context/domain/interfaces/todo.repository.interface";
 import { TODO_REPOSITORY } from "@/context/domain/tokens/injection.tokens";
 
@@ -19,7 +20,7 @@ export class UpdateTodoUseCase {
     const todo = await this.todoRepository.findById(id);
 
     if (!todo) {
-      throw new Error("Todo not found");
+      throw new TodoNotFoundException(id);
     }
 
     todo.updateTodo(title, description);
