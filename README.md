@@ -3,9 +3,26 @@
 ## Descripción
 Este proyecto es un backend para una aplicación de gestión de tareas (Todo App) desarrollado con NestJS, implementando una arquitectura hexagonal y utilizando GraphQL como API principal, con un endpoint REST para la autenticación.
 
+## URL del Proyecto
+El proyecto está desplegado en: https://todo-app-be-production-017b.up.railway.app/
+
+### Documentación
+- **API REST (Swagger)**: https://todo-app-be-production-017b.up.railway.app/api
+- **GraphQL Playground**: https://todo-app-be-production-017b.up.railway.app/graphql
+
+## Despliegue
+El proyecto está desplegado en Railway, una plataforma que simplifica el despliegue y hosting de aplicaciones. Railway proporciona:
+- Despliegue automático desde el repositorio
+- Base de datos PostgreSQL integrada
+- Variables de entorno seguras
+- Monitoreo y logs en tiempo real
+- Escalabilidad automática
+
+La base de datos PostgreSQL está configurada directamente en Railway, lo que elimina la necesidad de gestionar un contenedor Docker separado en producción. Sin embargo, para desarrollo local, se mantiene la configuración con Docker como se describe en la sección de configuración.
+
 ## Tecnologías Principales
 - **Arquitectura Hexagonal**: Patrón de arquitectura para mantener el dominio aislado
-- **Docker**: Para contenerización de la base de datos
+- **Docker**: Para contenerización de la base de datos i
 - **GraphQL**: Lenguaje de consulta para APIs
 - **JWT**: Autenticación basada en tokens
 - **NestJS**: Framework para construir aplicaciones del lado del servidor
