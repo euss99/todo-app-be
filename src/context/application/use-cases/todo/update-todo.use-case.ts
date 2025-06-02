@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { Inject } from "@nestjs/common";
 
+import { Todo } from "@/context/domain/entities/todo.entity";
 import { TodoNotFoundException } from "@/context/domain/exceptions/todo-not-found.exception";
 import { TodoRepository } from "@/context/domain/interfaces/todo.repository.interface";
 import { TODO_REPOSITORY } from "@/context/domain/tokens/injection.tokens";
@@ -16,7 +17,7 @@ export class UpdateTodoUseCase {
     id: string,
     title?: string,
     description?: string,
-  ): Promise<void> {
+  ): Promise<Todo> {
     const todo = await this.todoRepository.findById(id);
 
     if (!todo) {
@@ -24,6 +25,6 @@ export class UpdateTodoUseCase {
     }
 
     todo.updateTodo(title, description);
-    await this.todoRepository.save(todo);
+    return this.todoRepository.save(todo);
   }
 }
