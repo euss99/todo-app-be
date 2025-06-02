@@ -4,7 +4,7 @@ import { Repository } from "typeorm";
 
 import { Todo } from "@/context/domain/entities/todo.entity";
 import { TodoRepository } from "@/context/domain/interfaces/todo.repository.interface";
-import { TodoTypeOrmEntity } from "@/context/infrastructure/adapters/typeorm/todo.typeorm.entity";
+import { TodoTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/todo.typeorm.entity";
 
 @Injectable()
 export class TodoTypeOrmRepository implements TodoRepository {

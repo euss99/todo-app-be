@@ -4,7 +4,7 @@ import { Repository } from "typeorm";
 
 import { User } from "@/context/domain/entities/user.entity";
 import { UserRepository } from "@/context/domain/interfaces/user.repository.interface";
-import { UserTypeOrmEntity } from "@/context/infrastructure/adapters/typeorm/user.typeorm.entity";
+import { UserTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/user.typeorm.entity";
 
 @Injectable()
 export class UserTypeOrmRepository implements UserRepository {

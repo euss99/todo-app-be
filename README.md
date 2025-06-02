@@ -45,18 +45,10 @@ src/
 │   │   ├── interfaces/
 │   │   └── tokens/
 │   └── infrastructure/       # Implementaciones técnicas
-│       ├── adapters/         # Adaptadores para servicios externos
-│       ├── auth/             # Implementación de autenticación
-│       │   ├── guards/
-│       │   └── strategies/
-│       ├── graphql/          # Implementación de GraphQL
-│       │   ├── dtos/
-│       │   ├── models/
-│       │   └── resolvers/
-│       ├── rest/             # Implementación de REST
-│       │   ├── controllers/
-│       │   └── dtos/
-│       └── repositories/     # Implementaciones de repositorios
+│       ├── auth/             # Implementación de autenticación (guards, strategies)
+│       ├── graphql/          # Implementación de GraphQL (dtos, models, resolvers)
+│       ├── rest/             # Implementación de REST (controllers, dtos)
+│       └── typeorm/          # Implementación de TypeORM (entidades, repositorios)
 ```
 
 ## Características Implementadas
@@ -267,10 +259,16 @@ yarn start:dev
 ```
 
 ## Testing
-```bash
-# Ejecutar tests unitarios
-yarn test
+- Se han agregado pruebas unitarias para todas las entidades de dominio (`User`, `Todo`, `Auth`).
+- Se han agregado pruebas unitarias para los principales casos de uso, incluyendo:
+  - Creación de usuarios
+  - Creación, actualización, eliminación, actualización de estado y listado de tareas (todos) por usuario
+  - Autenticación (login, obtener usuario por token)
 
-# Ejecutar tests e2e
-yarn test:e2e
+Puedes encontrar las pruebas en la carpeta [`test/`](test/), organizadas por dominio y caso de uso.
+Para ejecutar las pruebas unitarias:
+
+```bash
+# Ejecutar unit tests
+yarn test:unit
 ```

@@ -1,7 +1,7 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 
-import { TodoTypeOrmEntity } from "@/context/infrastructure/adapters/typeorm/todo.typeorm.entity";
-import { UserTypeOrmEntity } from "@/context/infrastructure/adapters/typeorm/user.typeorm.entity";
+import { TodoTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/todo.typeorm.entity";
+import { UserTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/user.typeorm.entity";
 
 export const databaseConfig: TypeOrmModuleOptions = {
   type: "postgres",
