@@ -20,14 +20,14 @@ import {
   TODO_REPOSITORY,
   USER_REPOSITORY,
 } from "@/context/domain/tokens/injection.tokens";
-import { TodoTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/todo.typeorm.entity";
-import { UserTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/user.typeorm.entity";
 import { JwtStrategy } from "@/context/infrastructure/auth/jwt.strategy";
 import { TodoResolver } from "@/context/infrastructure/graphql/resolvers/todo.resolver";
 import { UserResolver } from "@/context/infrastructure/graphql/resolvers/user.resolver";
+import { AuthController } from "@/context/infrastructure/rest/controllers/auth.controller";
+import { TodoTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/todo.typeorm.entity";
+import { UserTypeOrmEntity } from "@/context/infrastructure/typeorm/entities/user.typeorm.entity";
 import { TodoTypeOrmRepository } from "@/context/infrastructure/typeorm/repositories/todo.typeorm.repository";
 import { UserTypeOrmRepository } from "@/context/infrastructure/typeorm/repositories/user.typeorm.repository";
-import { AuthController } from "@/context/infrastructure/rest/controllers/auth.controller";
 
 @Module({
   imports: [
